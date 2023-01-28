@@ -1,0 +1,4 @@
+StatefulSets are used to manage stateful applications, where each pod has a unique identity.
+Deployments are used to manage stateless applications, where pods can be easily replaced. 
+StatefulSets ensure that pods have a unique network identity, and maintain the same network identity across restarts and rescheduling. 
+Deployments provide rolling updates and rollbacks.
