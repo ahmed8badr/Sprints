@@ -1,0 +1,5 @@
+What is Jenkins agent? What is Jenkins executor (Build Executor) ?
+- Jenkins agent refers to a Java executable that runs on a remote machine and connects to the Jenkins master to receive work assignments. 
+  It can run builds, tests, or other tasks defined on the Jenkins master.
+- Jenkins executor is a single instance of an execution environment, which can run a single build at a time. 
+  The executor is associated with a single agent, and multiple executors can run on a single agent machine.

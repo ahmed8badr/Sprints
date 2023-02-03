@@ -1,0 +1,3 @@
+What is Jenkins used for ?
+Jenkins is an open-source automation server used for building, testing, and deploying software projects.
+It provides hundreds of plugins to support building, deploying, and automating any project.

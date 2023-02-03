@@ -1,0 +1,5 @@
+Explain Jenkins master-slave architecture ?
+Jenkins master-slave architecture is a distributed setup where the workload of building, testing, and deploying is divided between multiple machines. 
+In this architecture, the Jenkins master coordinates the build process and delegates work to slave machines as necessary. 
+The slave machines run the builds and send the results back to the master. 
+This allows for better utilization of resources and improved scalability.
