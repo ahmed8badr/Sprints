@@ -1,0 +1,15 @@
+what is different between authorization and authentication ? 
+- Authentication in Jenkins is the process of verifying the identity of a user, to confirm that the user attempting to 
+  access the system is who they claim to be. Jenkins supports several authentication methods, including basic authentication, 
+  LDAP authentication, and OAuth authentication. Once a user has been authenticated, their identity is stored in the 
+  Jenkins user database, and can be used to control access to various parts of the Jenkins system.
+
+- Authorization in Jenkins is the process of granting or denying access to various parts of the system based on the 
+  authenticated identity of the user. Jenkins supports several authorization methods, including Role-Based Access 
+  Control (RBAC), matrix-based security, and project-based security. RBAC allows administrators to define roles with 
+  specific permissions, and assign those roles to users or groups. Matrix-based security allows administrators to define 
+  fine-grained access control based on user and project combinations. Project-based security allows administrators to define 
+  access control for individual projects.
+
+In summary, authentication in Jenkins verifies the identity of a user, while authorization in Jenkins controls access 
+to various parts of the system based on the authenticated identity of the user.

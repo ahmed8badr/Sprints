@@ -1,0 +1,25 @@
+what are different method to trigger pipeline in jenkins ? 
+There are several ways to trigger a pipeline in Jenkins:
+
+- Manual Trigger: A pipeline can be manually triggered by a user, who clicks the "Build Now" button in the Jenkins interface. 
+This is useful for testing and debugging pipelines, or for manually triggering builds on-demand.
+
+- Poll SCM: A pipeline can be triggered automatically whenever changes are pushed to the source code repository. 
+  In this approach, Jenkins polls the repository at regular intervals and triggers a build whenever new changes are detected. 
+  This is useful for continuous integration, where changes are automatically built and tested as soon as they are pushed to 
+  the repository.
+
+- GitHub Webhook: If your source code is stored on GitHub, you can use a GitHub webhook to trigger your pipeline whenever 
+  changes are pushed to a particular branch. When a change is pushed, GitHub sends a notification to Jenkins, 
+  which then triggers a build.
+
+- Timer Trigger: A pipeline can be triggered automatically on a schedule, using a timer trigger. For example, 
+  you can set up a pipeline to run every night at a specified time, to perform a nightly build or deployment.
+
+- Triggering from another pipeline: A pipeline can be triggered from another pipeline, as part of a larger, 
+  multi-stage workflow. For example, you might have a pipeline that builds code and then triggers another pipeline to deploy
+  the built code to a production environment.
+
+- Remote API Trigger: You can use the Jenkins remote API to trigger a pipeline programmatically, 
+  from a script or another application. This is useful for integrating Jenkins with other systems, 
+  such as a continuous delivery platform, to trigger builds automatically as part of a larger workflow.

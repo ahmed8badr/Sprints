@@ -1,0 +1,22 @@
+what is the benefit of using master-slave architecture rather than building on master only ?
+The master-slave architecture in Jenkins provides several benefits over building on the master node only:
+
+- Scalability: In a master-slave architecture, multiple slave nodes can be added to handle the build workload, 
+  allowing the system to scale horizontally to handle an increasing build demand. This makes it possible to build and 
+  deploy software faster, and to handle larger and more complex builds.
+
+- Resource isolation: By building on slave nodes, you can isolate build resources and prevent resource contention on 
+  the master node. This can improve the performance and reliability of the build system, as well as ensure that other 
+  important tasks, such as backups and system upgrades, are not imp acted by build activity.
+
+- Environment customization: Each slave node can be configured with a different set of tools and resources, 
+  allowing you to build software in different environments and target different platforms. For example, you can have one 
+  slave node for building on Windows and another for building on Linux.
+
+- Improved security: By building on slave nodes, you can limit the exposure of sensitive information, 
+  such as source code, to the master node. This can help to improve the security of your build system and protect against 
+  unauthorized access or theft of confidential information.
+
+- Better utilization of resources: In a master-slave architecture, slave nodes can be used to perform other tasks when 
+  they are not building software. This can help to improve the utilization of resources, reducing the overall cost of 
+  the build system.
