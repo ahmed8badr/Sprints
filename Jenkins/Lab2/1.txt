@@ -1,0 +1,11 @@
+What is Jenkins pipeline?
+Jenkins Pipeline is a suite of plugins that provides a simple way to create, manage, 
+and visualize continuous delivery pipelines in Jenkins. A pipeline is a series of steps that define a workflow for building,
+testing, and deploying software. In Jenkins, a pipeline is defined using a special syntax called "Jenkinsfile" that is 
+stored in the source code repository and executed by Jenkins as a part of the build process. 
+The pipeline is defined using a series of steps that are executed in order, each step performing a specific task. 
+For example, a pipeline might include steps to checkout code from a version control system, build the code, run tests,
+and deploy the code to a production environment. The pipeline can be visualized in the Jenkins user interface, 
+providing an overview of the build status and progress of each step. The pipeline is highly customizable, 
+allowing developers to create pipelines that meet their specific needs, and Jenkins makes it easy to integrate with 
+other tools and services, such as version control systems, test frameworks, and deployment tools.

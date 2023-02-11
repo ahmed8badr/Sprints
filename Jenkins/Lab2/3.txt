@@ -1,0 +1,14 @@
+What are the ways you can write pipeline in Jenkins?
+There are two main ways to write a Jenkins pipeline:
+
+- Declarative pipeline: This is a more recent addition to Jenkins pipeline and provides a simplified and more 
+readable syntax for defining pipelines. In a declarative pipeline, the pipeline is defined using a high-level, 
+concise syntax that is easy to understand, even for people who are not familiar with Groovy or programming in general. 
+The declarative pipeline syntax provides a range of pre-defined steps and constructs that can be used to perform common 
+tasks, such as checking out code from a version control system, building code, and deploying code.
+
+- Scripted pipeline: This is the original way to write Jenkins pipelines and provides a more flexible and powerful way 
+to define pipelines, by using the full capabilities of the Groovy programming language. In a scripted pipeline, 
+the pipeline is defined using a series of Groovy scripts that perform individual steps in the pipeline. This approach 
+provides greater control over the pipeline, allowing for custom logic and advanced features such as loops, conditionals, 
+and error handling.
