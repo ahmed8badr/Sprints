@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    environment {
+        ECR_REPOSITORY = '<ecr link>'
+        KUBECONFIG_PATH = '<path/to/your/kubeconfig>'
+        SERVICE_NAME = '<service-name>'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git '<repo link>'
+            }
+        }
+
+        stage('Build Docker image') {
+            steps {
+                sh 'docker build -t ${ECR_REPOSITORY}:latest .'
+            }
+        }
+
+        stage('Push Docker image') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: '<aws credentials id>', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    sh 'docker login -u $AWS_ACCESS_KEY_ID -p $AWS_SECRET_ACCESS_KEY ${ECR_REPOSITORY}'
+                    sh 'docker push ${ECR_REPOSITORY}:latest'
+                }
+            }
+        }
+
+        stage('Deploy to EKS') {
+            steps {
+                withCredentials([file(credentialsId: '<kubeconfig credentials id>', variable: 'KUBECONFIG')]) {
+                    sh 'kubectl --kubeconfig=${KUBECONFIG} apply -f k8s/manifests/'
+                }
+            }
+        }
+
+        stage('Output website URL') {
+            steps {
+                script {
+                    def loadBalancerHostname = sh(script: "kubectl --kubeconfig=${KUBECONFIG} get svc ${SERVICE_NAME} -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'", returnStdout: true).trim()
+                    echo "URL: http://${loadBalancerHostname}"
+                }
+            }
+        }
+    }
+}
+
